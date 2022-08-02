@@ -1,0 +1,100 @@
+<!--<?php
+require("base.php");
+$greetings= "Welcome from webserver";
+if(isset($_POST['bika'])){
+$name=$_REQUEST["Name"];
+$location=$_REQUEST["location"];
+$age=$_REQUEST["age"];
+ $query="INSERT INTO customer(C_Name,C_location,C_Age) VALUE('$name','$location',$age)";
+ $rs = mysqli_query($con,$query);
+ if($rs){
+    echo "Well Done"." ".$greetings." ".$name."</br>";
+ }
+ else{
+    echo "Errors".mysqli_error($con); 
+ } 
+
+}
+if(isset($_POST['bikura'])){
+    $query= "SELECT * FROM customer";
+    $re = mysqli_query($con,$query);
+    if($re){
+        while($row = mysqli_fetch_array($re)){
+        echo  $row["C_Id"].", ".$row["C_Name"]."</br>";
+     }}
+     else{
+        echo "wrong query".mysqli_error($con); 
+     } 
+     }
+    
+?>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+   <!-- <embed type="image/jpg" src="pc2.png">-->
+    <div id="login-form" class="login-page">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" onclick="login()" class="toggle-btn">Log In</button>
+                <button type="button" onclick="register()" class="toggle-btn">Register</button>
+                </div>
+                <form id="login" class="input-group-login">
+                    <input type="text" class="input-field" placeholder="Email " required>
+                    <input type="password" class="input-field" placeholder="Enter password " required>
+                    <input type="checkbox" class="check-box"><span>Admin</span>
+                    <input type="checkbox" class="check-box"><span>Customer</span></br>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="register" class="input-group-register">
+                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <input type="text" class="input-field" placeholder="Last Name" required>
+                    <input type="email" class="input-field" placeholder="Email " required>
+                    <input type="password" class="input-field" placeholder="Enter password" required>
+                    <input type="password" class="input-field" placeholder="Confirm password" required>
+                    <input type="checkbox" class="check-box"><span>Admin</span>
+                    <input type="checkbox" class="check-box"><span>Customer</span></br>
+            <input type="checkbox" class="check box"><span>I agree to the terms and condtionns </span>
+                    <button type="submit" class="submit-btn">Register</button>
+                    
+                    
+                </form>
+               <script>
+                   var x =document.getElementById("login");
+                   var y =document.getElementById('register');
+                   var z=document.getElementById('btn');
+                   function register(){
+                       x.style.left='400px';
+                       y.style.left='60px';
+                       z.style.left='110px'
+
+                   } 
+                function login(){
+                    x.style.left='50px';
+                    y.style.left='450px';
+                    z.style.left='0px';
+
+                }
+                </script>
+    <script>
+var modal = document.getElementById('login-form');
+window.onclick = function(event)
+{
+    if(event.target==modal)
+    {
+        modal.style.display = "none";
+        
+    }
+}
+</script>
+
+</body>
+</html>

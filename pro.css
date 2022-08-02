@@ -1,0 +1,27 @@
+lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: alpha(Opacity=100);
+  opacity: 1;
+}
+.gallery {
+  margin: 10px 50px;
+}
+.gallery img {
+  padding: 15px;
+  transition: 1s;
+  width: 200px;
+}
+.gallery img:hover {
+  filter: grayscale(100%);
+  transform: scale(1.1);
+}
+h1 {
+  font-family: sans-serif;
+}
+h1:first-letter {
+  color: brown;
+  font-size: 200%;
+}
+body {
+  background-color: whitesmoke;
+}
